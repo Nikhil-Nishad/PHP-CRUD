@@ -1,0 +1,133 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="stylesheet" href="styles.css" />
+    <title>Form</title>
+  </head>
+  <body>
+    <div class="form-div">
+      <form
+        action="connection.php"
+        method="post"
+        enctype="multipart/form-data"
+        name="signup"
+        onsubmit="return validateForm()"
+      >
+        <h3>Fill Details</h3>
+        <div class="data-field">
+          <label>Name:</label>
+          <input name="name" id="name" minlength="4" required /><br />
+        </div>
+        <div class="data-field">
+          <label>Password:</label>
+          <input
+            name="pass"
+            id="pass"
+            minlength="8"
+            pattern="(?=.*\d)(?=.*[a-z])(?=.*[A-Z]).{8,}"
+            required
+          />
+          <p style="font-size: small">
+            (Must Contain: least one number, and one uppercase and lowercase
+            letter)
+          </p>
+        </div>
+        <div class="data-field">
+          <label>Email:</label>
+          <input
+            type="email"
+            name="email"
+            pattern="[a-z0-9._%+-]+@[a-z0-9.-]+\.[a-z]{2,}$"
+            title="Incorrect Email Domain"
+            required
+          /><br />
+        </div>
+        <div class="data-field">
+          <label>Gender:</label>
+          <input
+            value="male"
+            name="gender"
+            id="gender1"
+            type="radio"
+            required
+          />
+          <label for="gender1">Male</label>
+          <input value="female" name="gender" id="gender2" type="radio" />
+          <label for="gender2">Female</label>
+          <input value="other" name="gender" id="gender3" type="radio" />
+          <label for="gender3">Other</label><br />
+        </div>
+        <div class="data-field">
+          <label>Qualification:</label>
+          <input
+            type="checkbox"
+            id="qualification1"
+            name="qualification[]"
+            value="Graduation"
+          />
+          <label for="qualification11">Graduate</label>
+          <input
+            type="checkbox"
+            id="qualification2"
+            name="qualification[]"
+            value="Highschool"
+          />
+          <label for="qualification2">High School</label>
+          <input
+            type="checkbox"
+            id="qualification3"
+            name="qualification[]"
+            value="Illitrate"
+          />
+          <label for="qualification13">Illitrate</label><br />
+        </div>
+        <div class="data-field">
+          <label for="options" name="options">Options:</label>
+
+          <select name="options" id="options" required>
+            <option value="item1" name="options">Item1</option>
+            <option value="item2" name="options">Item2</option>
+            <option value="item3" name="options">Item3</option>
+          </select>
+          <br />
+        </div>
+        <div class="data-field">
+          <label for="photo">Select image:</label>
+          <input type="file" id="photo" name="photo" accept="image/*" />
+
+          <br />
+        </div>
+        <div class="data-field">
+          <button
+            type="submit"
+            value="submit"
+            name="submit"
+            style="font-size: larger; background: #3ec22a; padding: 0.3rem"
+          >
+            Submit
+          </button>
+          <a
+            class="loginBtn"
+            href="./login.php"
+            style="
+              color: rgb(255, 248, 248);
+              border: 1px solid black;
+              background: #0c81f6;
+              border-radius: 2px;
+              font-size: large;
+              margin-left: 20rem;
+              margin-top: -2rem;
+              padding: 0.5rem;
+              text-decoration: none;
+              font: bolder;
+            "
+            >Login</a
+          >
+        </div>
+      </form>
+    </div>
+  </body>
+</html>
